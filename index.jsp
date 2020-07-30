@@ -5,19 +5,20 @@
 <head>
 	<meta charset="UTF-8">
 	
-	<title><%=session.getAttribute("id") %></title>
-<jsp:include page="inc/top.jsp">
-<jsp:param value="" name=""/>
-</jsp:include>
-	<div id="content" class="box">
+	<title>HOME</title>
 	
 <%-- <%@ include file="include/getCookie.jsp" --%>
 <%@ include file="include/getSession.jsp" %>
+<%@ include file="inc/top.jsp" %>
+
+	<div id="content" class="box">
+	
 
 <%
-String sql=" select * from USERS ";
+String sql=" select IDX, UNAME, USERID, USEREMAIL, USTAT from USERS ";
 %>
 <%@ include file="include/DBconn.jsp" %>
+
 <%
 rsmd = rs.getMetaData();
 int colnum = rsmd.getColumnCount();
@@ -26,19 +27,28 @@ if(colnum > 0){// 메타데이터를 통하여 데이터 사전 정보 취득
 }
 out.print("<table><tr>");
 // 테이블 헤더 만들기
-	for(int i=1;i<=colnum;i++){
+	out.print("<th>No</th>");
+	for(int i=2;i<=colnum;i++){
 		out.print("<th>"+rsmd.getColumnName(i)+"</th>");
 	}	
+	out.print("<th>처리</th>");
 	out.print("</tr>");
+	/***************************************************************************/
 //테이블 데이터 만들기
 	String colname=null;
+int rowNo=1; // 행번호
+String idx=null;
 while(rs.next()){
 	out.print("<tr>");
-	for(int i=1;i<=colnum;i++){
+	out.print("<td>"+rowNo+"</td>"); //행번호 표시
+	rowNo++; //행번호 증가
+	for(int i=2;i<=colnum;i++){
 		//colname=rsmd.getColumnName(i);
 		//rs.getString(colname)
 		out.print("<td>"+rs.getString(i)+"</td>");
 	}	
+	idx=rs.getString(1); // 첫 번째 칼럼이 idx 정보
+	out.print("<td><a href='edituser.jsp?id="+idx+"'>수정</a></td>"); // 어떤 것을 수정할 지 get 방식으로 id 전달
 	out.print("</tr>");
 }
 out.print("</table>");
