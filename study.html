@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<% %> 스크립트릿		: 자바 프로그램 작성
+	<%! %> 선언 스크립트릿 	: 함수나 변수 선언 시 사용
+	<%= %> 표현 스크립트릿  	: 직접 값 출력
+	<%@ %> 지시 스크립트릿	: 웹 컨테이너가 jsp를 처리하는 과정을 지시하는 경우
+	
+	
+	redirect 하기
+	
+// 멤버 체크가 끝나면 원래 페이지로 돌아가기
+// 1.javascript 로 리다이렉트하기 조건부로 넘어가기
+out.print("<script>window.location.href='index.jsp'</script>");
+	
+// 2.response로 리다이렉트하기
+response.sendRedirect("index.jsp");
+return;
+// 3.jsp로 리다이렉트하기
+<jsp:forward page="index.jsp">
+	
+
+</body>
+</html>
