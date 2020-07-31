@@ -23,6 +23,7 @@ int colnum = rsmd.getColumnCount();
 if(colnum > 0){// 메타데이터를 통하여 데이터 사전 정보 취득
 	//out.print("<pre>데이터획득</pre>");
 }
+out.print("<div><a href='addUser.jsp'>사용자 추가</a></div>");
 out.print("<table><tr>");
 // 테이블 헤더 만들기
 	out.print("<th>No</th>");
