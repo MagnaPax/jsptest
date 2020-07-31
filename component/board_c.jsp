@@ -1,31 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	
-	<title>Home</title>
-<%--<%@ include file="include/getCookie.jsp" %>--%>
-<%@ include file="include/getSession.jsp" %>
-<%@ include file="inc/top.jsp" %>
-
-	<div id="content" class="box">
-
 <%
-String sql=" select IDX,UNAME,USERID,UEMAIL,USTAT from USERS ";
 
-%>
-<%@ include file="include/DBconn.jsp" %>
-
-<%
 rsmd = rs.getMetaData();
 int colnum = rsmd.getColumnCount();
 if(colnum > 0){// 메타데이터를 통하여 데이터 사전 정보 취득
 	//out.print("<pre>데이터획득</pre>");
 }
-out.print("<div><a href='addUser.jsp'>사용자 추가</a></div>");
-out.print("<table><tr>");
+
+out.print("<table class='table table-bordered'><tr>");
 // 테이블 헤더 만들기
 	out.print("<th>No</th>");
 	for(int i=2;i<=colnum;i++){
@@ -48,14 +31,9 @@ while(rs.next()){
 		out.print("<td>"+rs.getString(i)+"</td>");
 	}
 	idx=rs.getString(1);
-	out.print("<td><a href='editUser.jsp?id="+idx+"'>수정</a> ");
-	out.print("| <a href='delUser.jsp?id="+idx+"'>삭제</a></td>");
+	out.print("<td><a href='editDoc.jsp?id="+idx+"' class='btn btn-xs btn-success'>수정</a> ");
+	out.print("| <a href='delDoc.jsp?id="+idx+"'  class='btn btn-xs btn-danger'>삭제</a></td>");
 	out.print("</tr>");
 }
 out.print("</table>");
 %>
-
-<%@ include file="inc/class1.jsp" %>
-<%@ include file="include/DBclose.jsp" %>
-	</div>		
-<jsp:include page="inc/bottom.jsp"></jsp:include>

@@ -23,7 +23,7 @@
  %>
 <%@ include file="include/DBconn.jsp" %>
 <%
-	out.print(sql);
+	out.print("OK update");
 	out.print("<script>window.location.href='index.jsp'</script>");
 
  %>

@@ -71,7 +71,7 @@
 		<nav>
 			<ul id="menu">
 				<li> <a href="/jsptest/">Home</a> </li>
-				<li> <a href="java.jsp">Java</a> </li>
+				<li> <a href="board.jsp">게시판</a> </li>
 				<li> <a href="jsp.jsp">JSP</a> </li>
 				<li> <a href="login.jsp">login</a> </li>
 			</ul>

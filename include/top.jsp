@@ -32,7 +32,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#">내소개</a></li>
+              <li><a href="board.jsp">게시판</a></li>
               <li><a href="#">프로필</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">프로젝트 <span class="caret"></span></a>

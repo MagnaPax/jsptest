@@ -31,7 +31,6 @@ while(rs.next()){
 }
 if(flag>0){
 	out.print("<pre>"+userName+"환영합니다.</pre>");
-	//out.print("<script>window.location.href='index.jsp'</script>");
 	
 	//로그인 정보를 저장
 	//세션을 생성하기
@@ -45,7 +44,6 @@ if(flag>0){
 	response.addCookie(c);
 	
 	out.print("<script>window.location.href='index.jsp'</script>");
-	
 	
 }else{
 	out.print("<pre>로그인정보를 찾을수 없습니다.</pre>");
