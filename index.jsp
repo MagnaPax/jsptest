@@ -47,7 +47,8 @@ while(rs.next()){
 		out.print("<td>"+rs.getString(i)+"</td>");
 	}
 	idx=rs.getString(1);
-	out.print("<td><a href='editUser.jsp?id="+idx+"'>수정</a></td>"); // 어떤 것을 수정할 지 get 방식으로 id 전달
+	out.print("<td><a href='editUser.jsp?id="+idx+"'>수정</a>"); // 어떤 것을 수정할 지 get 방식으로 id 전달
+	out.print(" | <a href='delUser.jsp?id="+idx+"'>삭제</a></td>"); // 어떤 것을 삭제할 지 get 방식으로 id 전달
 	out.print("</tr>");
 }
 out.print("</table>");
