@@ -25,7 +25,7 @@ try{
 	conn=DriverManager.getConnection(url, user, password);
 	stmt=conn.createStatement();
 	rs=stmt.executeQuery(sql);
-	out.print("<pre>DB Ok</pre>");
+//	out.print("<pre>DB Ok</pre>");
 }catch(ClassNotFoundException e){
 	out.print("<pre>클래스 에러</pre>");
 	out.print("<pre>"+e.getMessage()+"</pre>");
