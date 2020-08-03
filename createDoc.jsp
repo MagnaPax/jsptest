@@ -11,7 +11,7 @@
 
 
  	String sql = "";
- 	if (btitle == null) {// idx가 없으면 업데이트 대상이 없으므로 뒤로 돌아가기
+ 	if (btitle == null) {// btitle가 없으면 업데이트 대상이 없으므로 뒤로 돌아가기
  		out.print("<script>window.location.href='board.jsp'</script>");
  		return;
  	} else {
@@ -21,7 +21,7 @@
  %>
 <%@ include file="include/DBconn.jsp" %> <%----%>
 <%
-	//out.print(sql);
-	out.print("<script>window.location.href='board.jsp'</script>");
+	out.print(sql);
+	//out.print("<script>window.location.href='board.jsp'</script>");
 
  %>

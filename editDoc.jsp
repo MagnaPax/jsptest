@@ -63,7 +63,14 @@ if(flag>0){
 					<input type="hidden" id="bsee" name="bsee" value="<%=bsee %>" />
 					<input type="text" id="btitle" name="btitle" class="form-control" value="<%=btitle %>" required /> 
 					<label for="bwriter" class="">작성자</label>
-					<input type="text" id="bwriter" name="bwriter" class="form-control"  value="<%=bwriter %>" required /> 
+					
+					<select id="bwriter" class="form-control">
+					<option value="1">홍길동</option>
+					<option value="13">박문수</option>
+					</select>
+					
+					<input type="hidden" id="bwriter" name="bwriter" class="form-control"  value="<%=bwriter %>" required />
+					 
 					<label for="bcontent" class="">내용</label> 
 					<textarea id="bcontent" name="bcontent"
 					class="form-control" rows=5 
